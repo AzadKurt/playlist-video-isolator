@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Playlist Video Isolator",
+  "description": "Adds a button to each video of a YouTube playlist to open it in an isolated context.",
+  "version": "1.0",
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://youtube.com/*", "*://www.youtube.com/*", "*://m.youtube.com/*"],
+      "js": ["./src/utils.js", "./src/mobile-playlist-handler.js", "./src/desktop-playlist-handler.js", "./src/content-script.js"]
+    }
+  ]
+}

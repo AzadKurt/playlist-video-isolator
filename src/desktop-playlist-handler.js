@@ -12,7 +12,6 @@ class DesktopPlaylistHandler {
 
     for (const video of videos) {
       this.addOpenButton(video);
-      this.addedButtons++;
     }
 
     this.addVideosObserver(playlist, videos);
@@ -20,10 +19,10 @@ class DesktopPlaylistHandler {
 
   addOpenButton(video) {
     const menu = video.querySelector('#menu');
-
     const buttonElement = this.getButtonElement(this.getVideoLink(video));
 
     menu.insertAdjacentHTML('beforebegin', buttonElement);
+    this.addedButtons++;
   }
 
   getVideoLink(video) {
